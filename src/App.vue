@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <b-container>
+      <Header/>
+
       <b-img src="./assets/img/footer-bg.jpg" fluid alt="footer" />
+
       <Footer/>
     </b-container>
   </div>
