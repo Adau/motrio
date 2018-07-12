@@ -21,6 +21,16 @@ module.exports = {
             // other preprocessors should work out of the box, no loader config like this necessary.
             'scss': 'vue-style-loader!css-loader!sass-loader',
             'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+          },
+          transformToRequire: {
+            'img': 'src',
+            'image': 'xlink:href',
+            'b-img': 'src',
+            'b-img-lazy': ['src', 'blank-src'],
+            'b-card': 'img-src',
+            'b-card-img': 'img-src',
+            'b-carousel-slide': 'img-src',
+            'b-embed': 'src'
           }
           // other vue-loader options go here
         }
