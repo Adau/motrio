@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <b-container>
+      <b-img src="./assets/img/footer-bg.jpg" fluid alt="footer" />
+      <Footer/>
+    </b-container>
   </div>
 </template>
 
