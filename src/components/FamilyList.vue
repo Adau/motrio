@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-row class="family-list">
-      <FamilyItem
+      <FamilyListItem
         v-for="family in families"
         :key="family.familyId"
         :family="family"
@@ -17,12 +17,13 @@
 
 <script>
 import axios from 'axios'
-import FamilyItem from './FamilyItem.vue'
+import FamilyListItem from './FamilyListItem.vue'
 import CategoryList from './CategoryList.vue'
 
 export default {
+  name: 'FamilyList',
   components: {
-    FamilyItem,
+    FamilyListItem,
     CategoryList
   },
   data () {

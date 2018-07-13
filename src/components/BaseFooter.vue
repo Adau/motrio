@@ -32,6 +32,12 @@
   </footer>
 </template>
 
+<script>
+export default {
+  name: 'BaseFooter'
+}
+</script>
+
 <style lang="scss">
 @import "../assets/scss/main.scss";
 

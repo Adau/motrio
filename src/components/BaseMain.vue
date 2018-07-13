@@ -12,6 +12,7 @@
 import FamilyList from './FamilyList.vue'
 
 export default {
+  name: 'BaseMain',
   components: {
     FamilyList
   }

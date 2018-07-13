@@ -1,9 +1,18 @@
 <template>
   <b-col md="2">
-    <figure class="category">
-      <b-img class="category__picture" :src="'https://motrio.com/uploads/categories/' + category.categoryPicto" width="75" height="75" alt="icon" />
+    <figure
+      class="family"
+      @click="$emit('clicked', family.familyId)"
+    >
+      <b-img
+        class="family__picture"
+        :src="'https://motrio.com/uploads/families/' + family.familyPicto"
+        width="75"
+        height="75"
+        alt="icon"
+      />
       <figcaption>
-        {{ category.category }}
+        {{ family.family }}
       </figcaption>
     </figure>
   </b-col>
@@ -11,8 +20,9 @@
 
 <script>
 export default {
+  name: 'FamilyListItem',
   props: {
-    category: {
+    family: {
       type: Object,
       required: true
     }
@@ -23,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
 
-.category {
+.family {
   text-align: center;
 
   &:hover {

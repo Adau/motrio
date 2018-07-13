@@ -3,7 +3,7 @@
     v-if="categories.length"
     class="category-list"
   >
-    <CategoryItem
+    <CategoryListItem
       v-for="category in categories"
       :key="category.categoryId"
       :category="category"
@@ -12,11 +12,12 @@
 </template>
 
 <script>
-import CategoryItem from './CategoryItem.vue'
+import CategoryListItem from './CategoryListItem.vue'
 
 export default {
+  name: 'CategoryList',
   components: {
-    CategoryItem
+    CategoryListItem
   },
   props: {
     categories: {
