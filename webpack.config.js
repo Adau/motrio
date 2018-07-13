@@ -63,7 +63,15 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    proxy: {
+      "/api": {
+      "target": 'https://motrio.com/fr-fr',
+      "pathRewrite": { '^/api': '' },
+      "changeOrigin": true,
+      "secure": false
+      }
+    }
   },
   performance: {
     hints: false

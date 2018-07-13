@@ -3,7 +3,7 @@
     <b-container>
       <Header/>
 
-      <b-img src="./assets/img/footer-bg.jpg" fluid alt="footer" />
+      <Main/>
 
       <Footer/>
     </b-container>
@@ -11,11 +11,16 @@
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
+import Footer from './components/Footer.vue'
+
 export default {
   name: 'app',
-  data () {
-    return {
-    }
+  components: {
+    Header,
+    Main,
+    Footer
   }
 }
 </script>
