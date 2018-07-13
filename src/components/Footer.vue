@@ -33,8 +33,7 @@
 </template>
 
 <style lang="scss">
-@import "../assets/scss/bootstrap-variables";
-@import "~bootstrap/scss/bootstrap";
+@import "../assets/scss/main.scss";
 
 .footer {
   padding: map-get($spacers, 3);

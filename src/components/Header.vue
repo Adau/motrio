@@ -23,8 +23,7 @@
 </template>
 
 <style lang="scss">
-@import "../assets/scss/bootstrap-variables";
-@import "~bootstrap/scss/bootstrap";
+@import "../assets/scss/main.scss";
 
 .navbar-nav {
   flex: 1;

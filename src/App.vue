@@ -24,8 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import "./assets/scss/bootstrap-variables";
-@import "~bootstrap/scss/bootstrap";
-</style>
