@@ -35,8 +35,9 @@ export default {
   @include full-width();
 
   position: relative;
+  justify-content: center;
   padding: map-get($spacers, 4) 0;
-  background-color: theme-color('light');
+  background-color: gray('200');
   color: color('white');
 
   &::after {
