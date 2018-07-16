@@ -39,7 +39,7 @@ export default {
     }
   },
   created () {
-    axios.get('/api/search/categories') // https://motrio.com/fr-fr/search/categories
+    axios.get('/search/categories')
       .then(response => {
         this.families = response.data.families
         this.categories = response.data.categories

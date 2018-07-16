@@ -65,9 +65,10 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     proxy: {
-      "/api": {
-      "target": 'https://motrio.com/fr-fr',
-      "pathRewrite": { '^/api': '' },
+      "/search": {
+      // "target": 'https://motrio.com/fr-fr',
+      "target": 'http://dev-motrio-v2.makheia.digital/fr-fr/search',
+      "pathRewrite": { '^/search': '' },
       "changeOrigin": true,
       "secure": false
       }
