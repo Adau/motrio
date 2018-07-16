@@ -44,8 +44,8 @@ export default {
         this.families = response.data.families
         this.categories = response.data.categories
       })
-      .catch(e => {
-        console.error(e)
+      .catch(error => {
+        console.error(error)
       })
   },
   methods: {

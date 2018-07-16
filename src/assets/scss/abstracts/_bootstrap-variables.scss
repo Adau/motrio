@@ -9,7 +9,7 @@
 //
 
 // stylelint-disable
-// $white:    #fff !default;
+$white:    #fff !default;
 $gray-100: #f1f2f2;
 $gray-200: #d1d3d4;
 // $gray-300: #dee2e6 !default;
@@ -313,8 +313,8 @@ $headings-margin-bottom:      $spacer;
 // $table-border-width:          $border-width !default;
 // $table-border-color:          $gray-300 !default;
 
-// $table-head-bg:               $gray-200 !default;
-// $table-head-color:            $gray-700 !default;
+$table-head-bg:               $primary;
+$table-head-color:            $white;
 
 // $table-dark-bg:               $gray-900 !default;
 // $table-dark-accent-bg:        rgba($white, .05) !default;

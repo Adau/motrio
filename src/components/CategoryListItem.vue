@@ -1,6 +1,9 @@
 <template>
   <b-col md="2">
-    <figure class="category">
+    <figure
+      class="category"
+      @click="$emit('clicked', category.categoryId)"
+    >
       <b-img
         class="category__picture"
         :src="'https://motrio.com/uploads/categories/' + category.categoryPicto"

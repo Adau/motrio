@@ -1,28 +1,48 @@
 <template>
-  <b-row
-    v-if="categories.length"
-    class="category-list"
-  >
-    <CategoryListItem
-      v-for="category in categories"
-      :key="category.categoryId"
-      :category="category"
+  <div>
+    <b-row
+      v-if="categories.length"
+      class="category-list"
+    >
+      <CategoryListItem
+        v-for="category in categories"
+        :key="category.categoryId"
+        :category="category"
+        @clicked="setCategory"
+      />
+    </b-row>
+
+    <ProductList
+      v-if="selectedCategoryId"
+      :categoryId="selectedCategoryId"
     />
-  </b-row>
+  </div>
 </template>
 
 <script>
 import CategoryListItem from './CategoryListItem.vue'
+import ProductList from './ProductList.vue'
 
 export default {
   name: 'CategoryList',
   components: {
-    CategoryListItem
+    CategoryListItem,
+    ProductList
   },
   props: {
     categories: {
       type: Array,
       required: true
+    }
+  },
+  data () {
+    return {
+      selectedCategoryId: 0,
+    }
+  },
+  methods: {
+    setCategory(categoryId) {
+      this.selectedCategoryId = categoryId
     }
   }
 }
