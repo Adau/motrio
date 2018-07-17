@@ -13,8 +13,8 @@
     </b-row>
 
     <ProductList
-      v-if="selectedCategoryId"
-      :categoryId="selectedCategoryId"
+      v-if="selectedCategory"
+      :category="selectedCategory"
     />
   </div>
 </template>
@@ -37,12 +37,12 @@ export default {
   },
   data () {
     return {
-      selectedCategoryId: 0,
+      selectedCategory: {}
     }
   },
   methods: {
-    setCategory(categoryId) {
-      this.selectedCategoryId = categoryId
+    setCategory(category) {
+      this.selectedCategory = category
     }
   }
 }

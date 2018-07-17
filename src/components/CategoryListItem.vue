@@ -2,7 +2,7 @@
   <b-col md="2">
     <figure
       class="category"
-      @click="$emit('clicked', category.categoryId)"
+      @click="$emit('clicked', category)"
     >
       <b-img
         class="category__picture"

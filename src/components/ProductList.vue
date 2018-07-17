@@ -30,8 +30,8 @@ export default {
     }
   },
   props: {
-    categoryId: {
-      type: Number,
+    category: {
+      type: Object,
       required: true
     }
   },
@@ -48,7 +48,7 @@ export default {
     }
   },
   watch: {
-    categoryId: function () {
+    category: function () {
       this.setProducts()
     }
   },
@@ -56,7 +56,7 @@ export default {
     setProducts () {
       axios.get('/search/product_by_category', {
         params: {
-          category: this.categoryId
+          category: this.category.categoryId
         }
       })
       .then(response => {
