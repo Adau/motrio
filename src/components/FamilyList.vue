@@ -28,14 +28,14 @@ export default {
   },
   data () {
     return {
-      selectedFamilyId: 0,
+      selectedFamily: {},
       families: [],
       categories: []
     }
   },
   computed: {
     filteredCategories () {
-      return this.categories.filter(category => category.familyId == this.selectedFamilyId)
+      return this.categories.filter(category => category.familyId == this.selectedFamily.familyId)
     }
   },
   created () {
@@ -49,8 +49,8 @@ export default {
       })
   },
   methods: {
-    setFamily(familyId) {
-      this.selectedFamilyId = familyId
+    setFamily(family) {
+      this.selectedFamily = family
     }
   }
 }
