@@ -1,9 +1,6 @@
 <template>
   <div>
-    <b-row
-      v-if="categories.length"
-      class="category-list"
-    >
+    <b-row class="category-list">
       <CategoryListItem
         v-for="category in categories"
         :key="category.categoryId"
@@ -13,7 +10,7 @@
     </b-row>
 
     <ProductList
-      v-if="selectedCategory"
+      v-if="Object.keys(selectedCategory).length"
       :category="selectedCategory"
     />
   </div>

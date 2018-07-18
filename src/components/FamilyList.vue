@@ -10,6 +10,7 @@
     </b-row>
 
     <CategoryList
+      v-if="filteredCategories.length"
       :categories="filteredCategories"
     />
   </div>
