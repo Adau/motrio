@@ -1,5 +1,5 @@
 <template>
-  <b-col md="2">
+  <b-col cols="6" md="2">
     <figure
       class="family"
       @click="$emit('clicked', family)"

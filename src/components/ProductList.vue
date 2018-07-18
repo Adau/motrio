@@ -14,6 +14,7 @@
       :sort-by.sync="sortBy"
       :sort-desc.sync="sortDesc"
       head-variant="light"
+      responsive="md"
     >
     </b-table>
   </div>
