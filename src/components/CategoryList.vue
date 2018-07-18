@@ -56,6 +56,7 @@ export default {
 
   position: relative;
   justify-content: center;
+  margin-bottom: $spacer;
   padding: map-get($spacers, 4) 0;
   background-color: gray('200');
   color: color('white');

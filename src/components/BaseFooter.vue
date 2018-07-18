@@ -42,7 +42,7 @@ export default {
 @import "../assets/scss/main.scss";
 
 .footer {
-  padding: map-get($spacers, 3);
+  padding: $spacer;
   background-color: theme-color('dark');
   color: color('white');
   font-size: $small-font-size;

@@ -60,6 +60,6 @@ export default {
 @import "../assets/scss/main.scss";
 
 .family-list {
-  padding: map-get($spacers, 4) 0;
+  margin-bottom: $spacer;
 }
 </style>

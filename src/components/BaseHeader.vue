@@ -31,6 +31,10 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
 
+.header {
+  margin-bottom: $spacer;
+}
+
 .navbar-nav {
   flex: 1;
 }
