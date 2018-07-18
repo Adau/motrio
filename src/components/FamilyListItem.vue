@@ -1,7 +1,7 @@
 <template>
   <b-col cols="6" md="2">
     <figure
-      class="family"
+      :class="{ 'family': true, 'family--active': isActive }"
       @click="$emit('clicked', family)"
     >
       <b-img
@@ -25,6 +25,10 @@ export default {
     family: {
       type: Object,
       required: true
+    },
+    isActive: {
+      type: Boolean,
+      required: false
     }
   }
 }
@@ -36,7 +40,8 @@ export default {
 .family {
   text-align: center;
 
-  &:hover {
+  &:hover,
+  &--active {
     color: theme-color('primary');
     cursor: pointer;
   }

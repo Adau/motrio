@@ -5,6 +5,7 @@
         v-for="category in categories"
         :key="category.categoryId"
         :category="category"
+        :isActive="category == selectedCategory"
         @clicked="setCategory"
       />
     </b-row>

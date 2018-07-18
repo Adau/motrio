@@ -5,6 +5,7 @@
         v-for="family in families"
         :key="family.familyId"
         :family="family"
+        :isActive="family == selectedFamily"
         @clicked="setFamily"
       />
     </b-row>
