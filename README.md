@@ -1,18 +1,23 @@
-# motrio
+# Motrio
 
-> A Vue.js project
+## Installation
 
-## Build Setup
+1. Installer les dépendances :
 
-``` bash
-# install dependencies
-npm install
+    ```sh
+    yarn install
+    ```
 
-# serve with hot reload at localhost:8080
-npm run dev
+2. Lancer le pojet :
 
-# build for production with minification
-npm run build
-```
+    ```sh
+    yarn run start
+    ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+    Générer les fichiers de distribution pour la production :
+
+    ```sh
+    yarn run build
+    ```
+
+3. 🤩
