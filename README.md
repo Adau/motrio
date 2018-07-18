@@ -11,7 +11,7 @@
 2. Lancer le pojet :
 
     ```sh
-    yarn run start
+    yarn run dev
     ```
 
 3. 🤩
