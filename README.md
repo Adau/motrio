@@ -14,10 +14,4 @@
     yarn run start
     ```
 
-    Générer les fichiers de distribution pour la production :
-
-    ```sh
-    yarn run build
-    ```
-
 3. 🤩
