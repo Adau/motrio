@@ -1,5 +1,7 @@
 <template>
   <div>
+    <BaseIconLoading v-if="isLoading"/>
+
     <b-row class="family-list">
       <FamilyListItem
         v-for="family in families"
@@ -32,7 +34,8 @@ export default {
     return {
       selectedFamily: {},
       families: [],
-      categories: []
+      categories: [],
+      isLoading: false
     }
   },
   computed: {
@@ -41,8 +44,11 @@ export default {
     }
   },
   created () {
+    this.isLoading = true
+
     axios.get('/search/categories')
       .then(response => {
+        this.isLoading = false
         this.families = response.data.families
         this.categories = response.data.categories
       })

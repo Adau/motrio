@@ -8,6 +8,8 @@
       {{ products.length }} {{ products.length | pluralize('résultat') }}
     </h4>
 
+    <BaseIconLoading v-if="isLoading"/>
+
     <b-table
       v-if="products.length"
       :fields="fields"
@@ -62,7 +64,8 @@ export default {
         { key: 'link', label: ' ' },
       ],
       products: [],
-      selectedProduct: {}
+      selectedProduct: {},
+      isLoading: false
     }
   },
   watch: {
@@ -76,6 +79,7 @@ export default {
   methods: {
     setProducts () {
       this.products = [];
+      this.isLoading = true
 
       axios.get('/search/product_by_category', {
         params: {
@@ -83,6 +87,7 @@ export default {
         }
       })
       .then(response => {
+        this.isLoading = false
         this.products = response.data.products.products
       })
       .catch(error => {
