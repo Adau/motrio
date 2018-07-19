@@ -9,6 +9,7 @@
     </h4>
 
     <b-table
+      v-if="products.length"
       :fields="fields"
       :items="products"
       :sort-by.sync="sortBy"
