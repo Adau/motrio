@@ -38,6 +38,11 @@ export default {
       selectedCategory: {}
     }
   },
+  watch: {
+    categories: function () {
+      this.selectedCategory = {}
+    }
+  },
   methods: {
     setCategory(category) {
       this.selectedCategory = category

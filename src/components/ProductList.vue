@@ -75,6 +75,8 @@ export default {
   },
   methods: {
     setProducts () {
+      this.products = [];
+
       axios.get('/search/product_by_category', {
         params: {
           category: this.category.categoryId
