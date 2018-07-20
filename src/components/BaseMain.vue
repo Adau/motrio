@@ -19,8 +19,9 @@
     />
 
     <ProductList
-      v-if="selectedCategory"
-      :category="selectedCategory"
+      v-if="products.length"
+      :products="products"
+      :category="SelectedCategory"
     />
 
     <b-img src="../assets/img/footer-bg.jpg" fluid alt="footer" />
@@ -44,23 +45,14 @@ export default {
     return {
       families: [],
       categories: [],
+      products: [],
       selectedFamily: false,
       selectedCategory: false,
       isLoading: false
     }
   },
   created () {
-    this.isLoading = true
-
-    axios.get('/search/categories')
-      .then(response => {
-        this.isLoading = false
-        this.families = response.data.families
-        this.categories = response.data.categories
-      })
-      .catch(error => {
-        console.error(error)
-      })
+    this.setFamilies()
   },
   computed: {
     filteredCategories () {
@@ -68,12 +60,44 @@ export default {
     }
   },
   methods: {
-    setFamily(family) {
-      this.selectedFamily = family
-      this.setCategory(false)
+    setFamilies () {
+      this.isLoading = true
+
+      axios.get('/search/categories')
+        .then(response => {
+          this.isLoading = false
+          this.families = response.data.families
+          this.categories = response.data.categories
+        })
+        .catch(error => {
+          console.error(error)
+        })
     },
-    setCategory(category) {
+    setFamily (family) {
+      this.selectedFamily = family
+      this.selectedCategory = false
+      this.products = []
+    },
+    setCategory (category) {
       this.selectedCategory = category
+      this.products = []
+      this.setProducts()
+    },
+    setProducts () {
+      this.isLoading = true
+
+      axios.get('/search/product_by_category', {
+        params: {
+          category: this.selectedCategory.categoryId
+        }
+      })
+      .then(response => {
+        this.isLoading = false
+        this.products = response.data.products.products
+      })
+      .catch(error => {
+        console.error(error)
+      })
     }
   }
 }

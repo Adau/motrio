@@ -8,8 +8,6 @@
       {{ products.length }} {{ products.length | pluralize('résultat') }}
     </h4>
 
-    <BaseIconLoading v-if="isLoading"/>
-
     <b-table
       v-if="products.length"
       :fields="fields"
@@ -48,6 +46,10 @@ export default {
     }
   },
   props: {
+    products: {
+      type: Array,
+      required: true
+    },
     category: {
       type: Object,
       required: true
@@ -63,37 +65,10 @@ export default {
         { key: 'description', label: 'Caractéristiques', sortable: true },
         { key: 'link', label: ' ' },
       ],
-      products: [],
-      selectedProduct: {},
-      isLoading: false
+      selectedProduct: {}
     }
-  },
-  watch: {
-    category: function () {
-      this.setProducts()
-    }
-  },
-  created () {
-    this.setProducts()
   },
   methods: {
-    setProducts () {
-      this.products = [];
-      this.isLoading = true
-
-      axios.get('/search/product_by_category', {
-        params: {
-          category: this.category.categoryId
-        }
-      })
-      .then(response => {
-        this.isLoading = false
-        this.products = response.data.products.products
-      })
-      .catch(error => {
-        console.error(error)
-      })
-    },
     setProduct (product) {
       this.selectedProduct = product
       this.$root.$emit('bv::show::modal', 'modal')
