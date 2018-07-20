@@ -1,51 +1,31 @@
 <template>
-  <div>
-    <b-row class="category-list">
-      <CategoryListItem
-        v-for="category in categories"
-        :key="category.categoryId"
-        :category="category"
-        :isActive="category == selectedCategory"
-        @clicked="setCategory"
-      />
-    </b-row>
-
-    <ProductList
-      v-if="Object.keys(selectedCategory).length"
-      :category="selectedCategory"
+  <b-row class="category-list">
+    <CategoryListItem
+      v-for="category in categories"
+      :key="category.categoryId"
+      :category="category"
+      :isActive="category == selectedCategory"
+      @clicked="$emit('clicked', category)"
     />
-  </div>
+  </b-row>
 </template>
 
 <script>
 import CategoryListItem from './CategoryListItem.vue'
-import ProductList from './ProductList.vue'
 
 export default {
   name: 'CategoryList',
   components: {
-    CategoryListItem,
-    ProductList
+    CategoryListItem
   },
   props: {
     categories: {
       type: Array,
       required: true
-    }
-  },
-  data () {
-    return {
-      selectedCategory: {}
-    }
-  },
-  watch: {
-    categories: function () {
-      this.selectedCategory = {}
-    }
-  },
-  methods: {
-    setCategory(category) {
-      this.selectedCategory = category
+    },
+    selectedCategory: {
+      type: [Boolean, Object],
+      required: false
     }
   }
 }

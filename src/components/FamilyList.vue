@@ -24,7 +24,7 @@ export default {
       required: true
     },
     selectedFamily: {
-      type: Object,
+      type: [Boolean, Object],
       required: false
     }
   }

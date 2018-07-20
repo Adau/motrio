@@ -5,6 +5,7 @@
     <BaseIconLoading v-if="isLoading"/>
 
     <FamilyList
+      v-if="families.length"
       :families="families"
       :selectedFamily="selectedFamily"
       @clicked="setFamily"
@@ -13,6 +14,13 @@
     <CategoryList
       v-if="filteredCategories.length"
       :categories="filteredCategories"
+      :selectedCategory="selectedCategory"
+      @clicked="setCategory"
+    />
+
+    <ProductList
+      v-if="selectedCategory"
+      :category="selectedCategory"
     />
 
     <b-img src="../assets/img/footer-bg.jpg" fluid alt="footer" />
@@ -23,18 +31,21 @@
 import axios from 'axios'
 import FamilyList from './FamilyList.vue'
 import CategoryList from './CategoryList.vue'
+import ProductList from './ProductList.vue'
 
 export default {
   name: 'BaseMain',
   components: {
     FamilyList,
-    CategoryList
+    CategoryList,
+    ProductList
   },
   data () {
     return {
       families: [],
       categories: [],
-      selectedFamily: {},
+      selectedFamily: false,
+      selectedCategory: false,
       isLoading: false
     }
   },
@@ -59,6 +70,10 @@ export default {
   methods: {
     setFamily(family) {
       this.selectedFamily = family
+      this.setCategory(false)
+    },
+    setCategory(category) {
+      this.selectedCategory = category
     }
   }
 }
